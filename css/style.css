@@ -1,0 +1,219 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+}
+
+/* En-têtes de section */
+.hero-section, .cv-header, .activities-header, .showcase-header {
+    height: 25vh;
+    min-height: 310px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section::before,
+.cv-header::before,
+.activities-header::before,
+.showcase-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero-section > .container,
+.cv-header > .container,
+.activities-header > .container,
+.showcase-header > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Barre de navigation */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* Cartes */
+.card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Timeline pour le CV */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #0d6efd;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d6efd;
+}
+
+/* Badges */
+.badge {
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+/* Statistiques */
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+/* Témoignages */
+.testimonial {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial-author img {
+    border: 3px solid #0d6efd;
+}
+
+/* Boutons */
+.btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section, .cv-header, .activities-header, .showcase-header {
+        height: auto;
+        padding: 8rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+
+    .hero-section, .cv-header, .activities-header, .showcase-header {
+        padding: 6rem 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: -18px;
+    }
+    
+}
+/* Ajouts pour les activités */
+.card-img-container {
+    position: relative;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-container img {
+    transition: all 0.3s ease;
+}
+
+.total-activities {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+}
+
+.total-activities h4 {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.total-activities p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}

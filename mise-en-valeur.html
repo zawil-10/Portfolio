@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Mise en valeur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Wilfried Zanmo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="activite.html">Activités</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="mise-en-valeur.html">Mise en valeur</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="showcase-header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-3 text-white fw-bold mb-3">Mise en valeur</h1>
+                <p class="lead text-white">Mes réalisations les plus significatives</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Mes Réalisations Phares</h2>
+                <p class="lead text-muted">Découvrez mes projets les plus aboutis et les plus significatifs</p>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-10">
+                <div class="card mb-4 border-0 shadow">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="assets/showcase1.jpg" class="img-fluid h-100" alt="Réalisation 1" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Projet Majeur 1</h5>
+                                <p class="card-text">Description concise du projet et de son importance dans votre parcours.</p>
+                                <ul class="list-unstyled">
+                                    <li><strong>Client:</strong> Nom du client</li>
+                                    <li><strong>Date:</strong> Mois/Année</li>
+                                    <li><strong>Rôle:</strong> Votre rôle dans le projet</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-10">
+                <div class="card mb-4 border-0 shadow">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="assets/showcase2.jpg" class="img-fluid h-100" alt="Réalisation 2" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Projet Majeur 2</h5>
+                                <p class="card-text">Description concise du projet et de son importance dans votre parcours.</p>
+                                <ul class="list-unstyled">
+                                    <li><strong>Client:</strong> Nom du client</li>
+                                    <li><strong>Date:</strong> Mois/Année</li>
+                                    <li><strong>Rôle:</strong> Votre rôle dans le projet</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Témoignages</h3>
+                        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="testimonial text-center">
+                                        <p class="lead">"Témoignage d'un client ou collègue sur votre travail. Description de la collaboration et des résultats obtenus."</p>
+                                        <div class="testimonial-author">
+                                            <img src="assets/client1.jpg" class="rounded-circle mb-2" width="80" alt="Client 1">
+                                            <h6>Nom du client</h6>
+                                            <p class="text-muted">Poste, Entreprise</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial text-center">
+                                        <p class="lead">"Autre témoignage significatif sur votre professionnalisme et la qualité de votre travail."</p>
+                                        <div class="testimonial-author">
+                                            <img src="assets/client2.jpg" class="rounded-circle mb-2" width="80" alt="Client 2">
+                                            <h6>Nom du client</h6>
+                                            <p class="text-muted">Poste, Entreprise</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Précédent</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Suivant</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Wilfried Zanmo</h5>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
