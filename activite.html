@@ -5,66 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio - Activités</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <style>
-        .card-img-container {
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-            overflow: hidden;
+        body {
+            padding-top: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .card-img-container img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
+        .activities-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .activity-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            display: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
-        .card-img-container img.active {
-            display: block;
-            animation: fadeIn 0.5s;
+        .activity-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
         }
         
-        .description-container {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
+        .card-header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
         }
         
-        .description-container.show {
-            max-height: 500px;
+        .card-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
         }
         
-        .btn-toggle {
-            margin: 5px;
-            transition: all 0.3s;
+        .card-hours {
+            font-weight: bold;
+            color: #0d6efd;
+            margin-top: 5px;
         }
         
-        .btn-toggle:hover {
-            transform: translateY(-2px);
+        .card-content {
+            padding: 15px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .card-content p {
+            margin-bottom: 15px;
+        }
+        
+        .proof-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #eee;
         }
         
         .total-activities {
-            max-width: 300px;
-            margin: 20px auto;
             background-color: #f8f9fa;
-            border-left: 4px solid #0d6efd;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
+            margin: 30px auto;
+            max-width: 300px;
+            text-align: center;
+            border-left: 4px solid #0d6efd;
+            grid-column: 1 / -1;
         }
         
-        .total-activities h4 {
-            color: #0d6efd;
-            font-weight: 600;
+        @media (max-width: 768px) {
+            .activities-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -92,249 +112,136 @@
     </div>
 </nav>
 
-<header class="activities-header">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <h1 class="display-4 text-white fw-bold">Mes Activités</h1>
-                <p class="lead text-white">Découvrez mes expériences et projets réalisés</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Mes Activités</h1>
+    
+    <div class="activities-container">
+        <!-- Activité 1 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Séminaire Latex</h3>
+                <div class="card-hours">Heures effectuées : 6 </div>
             </div>
+            <div class="card-content" id="content1">
+                <p>J'ai participé à un séminaire sur LaTeX organisé par Madame Guerrit. 
+                    Celui-ci s'est déroulé en trois périodes. À chaque séance, 
+                    nous avons appris à utiliser différents outils de LaTeX. J'ai trouvé cela très utile, 
+                    car j'ai pu m'en servir pour rédiger mon rapport de stage ainsi que mon TFE.</p>
+                <img src="assets/latex.jpg" class="proof-image" id="proof1" alt="Preuve Séminaire Latex">
+            </div>
+        </div>
+
+        <!-- Activité 2 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Formation Java</h3>
+                <div class="card-hours">Heures effectuées : 10 </div>
+            </div>
+            <div class="card-content" id="content2">
+                <p>Dans le cadre de mon apprentissage, j'ai suivi une formation sur OpenClassrooms Java J'ai suivi une formation afin d'apprendre les bases de ce langage, nécessaire pour mon stage.</p>
+                <img src="assets/java.jpg" class="proof-image" id="proof2" alt="Preuve Formation Java">
+            </div>
+        </div>
+
+        <!-- Activité 3 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Activité openlab</h3>
+                <div class="card-hours">Heures effectuées : 5.2 </div>
+            </div>
+            <div class="card-content" id="content3">
+                <p>Lors de la conférence FCCU, nous avons eu l'honneur d'accueillir un agent de la police judiciaire, spécialisé dans le département IT. 
+                    Il nous a parlé de son travail, qui consiste à analyser les preuves numériques telles que les appels, les SMS, ou d'autres données digitales.
+                    Ce métier nécessite également une présence sur le terrain, car il arrive que les agents doivent se rendre directement sur les lieux pour effectuer des analyses.
+                    Nous avons également échangé sur le Cloud avec des collaborateurs d’Axentys ; ils nous ont fait une démonstration d’Azure, la plateforme cloud de Microsoft,
+                     où j’ai pu découvrir des fonctionnalités telles que le déploiement automatisé de sites web et d’infrastructures.</p>
+                <img src="assets/claud.jpg" class="proof-image" id="proof3" alt="Preuve Openlab">
+            </div>
+        </div>
+
+        <!-- Activité 4 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Atelier EPHEC Entreprendre</h3>
+                <div class="card-hours">Heures effectuées : 4 </div>
+            </div>
+            <div class="card-content" id="content4">
+                <p>j'ai participé  à des réunions sur la facturation et le statut d'étudiant entrepreneur organisées par EPHEC Entreprendre.</p>
+                <img src="assets/entrep.jpg" class="proof-image" id="proof4" alt="Preuve Atelier EPHEC">
+            </div>
+        </div>
+
+        <!-- Activité 5 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Formation React</h3>
+                <div class="card-hours">Heures effectuées : 8 </div>
+            </div>
+            <div class="card-content" id="content5">
+                <p>Dans le cadre de mon apprentissage, j'ai suivi une formation sur OpenClassrooms React un framework que j'ai utilisé dans divers projets à l'école</p>
+                <img src="assets/react.jpg" class="proof-image" id="proof5" alt="Preuve Formation React">
+            </div>
+        </div>
+
+        <!-- Activité 6 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">User-Centric Innovation and Media Regulation</h3>
+                <div class="card-hours">Heures effectuées : 9 </div>
+            </div>
+            <div class="card-content" id="content6">
+                <p>En avril 2025, j’ai eu le plaisir d’assister à la conférence annuelle ALGEPI, organisée à 
+                    l’Université de Namur autour du thème « AI to the Future : User-Centric Innovation and Media Regulation ».
+                     Cet événement a réuni des spécialistes de l’IA, des professionnels des médias et des chercheurs pour explorer les 
+                     enjeux et les opportunités qu’offre l’intelligence artificielle dans l’industrie du divertissement.
+                    Parmi les interventions, celle de Némésis Srour, Product Manager chez Spideo (filiale de Mediagenix), m’a particulièrement marqué. Elle a présenté Rumo, une solution SaaS de recommandation qui transforme la découvrabilité des contenus sur les plateformes de streaming. Ce qui m’a le plus inspiré, c’est l’approche de Spideo en matière de transparence et de contrôle : grâce à des interfaces pédagogiques, les équipes éditoriales peuvent non seulement visualiser et ajuster les algorithmes,
+                     mais aussi expliquer aux utilisateurs pourquoi tel ou tel contenu leur est suggéré.</p>
+                <img src="assets/algepi.jpg" class="proof-image" id="proof6" alt="Preuve Colloque IA">
+            </div>
+        </div>
+
+        <!-- Activité 7 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">Job étudiant Decathlon</h3>
+                <div class="card-hours">Heures effectuées : 10 </div>
+            </div>
+            <div class="card-content" id="content7">
+                <p>J'ai eu l'occasion de travailler en tant qu'étudiant au centre de distribution de Willebroek pour Decathlon. 
+                    Mon rôle principal était de préparer les commandes destinées aux différents magasins Decathlon situés en Belgique.
+                    Parfois, j'endossais le rôle de "chef de table". 
+                    Ce poste impliquait de gérer l'équipe pendant la journée. 
+                    Je devais assister à une réunion matinale où l'on nous communiquait les objectifs de la journée. 
+                    Ensuite, je devais m'assurer que l'équipe atteignait ces objectifs.</p>
+                <img src="assets/decathlon.jpeg" class="proof-image" id="proof7" alt="Preuve Job Decathlon">
+            </div>
+        </div>
+
+        <!-- Activité 8 -->
+        <div class="activity-card">
+            <div class="card-header">
+                <h3 class="card-title">5ème Colloque Condorcet IA</h3>
+                <div class="card-hours">Heures effectuées : 9 </div>
+            </div>
+            <div class="card-content" id="content8">
+                <p>J'ai assisté à la 5ᵉ colloque sur l'intelligence artificielle, organisé à Condorcet. Lors de cet événement, 
+                    nous avons discuté des enjeux liés à l'IA dans le milieu scolaire et de son intégration progressive.
+                    À la suite de la conférence, une charte a été ouverte afin de recueillir l'avis des étudiants. Plusieurs ateliers ont également été proposés :
+                    L'un animé par un chercheur, qui a présenté l'apport de l'IA dans son domaine de recherche.
+                    L'autre par un agent de Microsoft, avec qui nous avons échangé sur différents outils numériques et participé à des workshops.</p>
+                <img src="assets/colloc.jpeg" class="proof-image" id="proof8" alt="Preuve Colloque">
+            </div>
+        </div>
+
+        <!-- Total des activités -->
+        <div class="total-activities">
+            <h4>Total des activités: <span>8</span></h4>
+            <p class="mb-0">Heures totales: <span>61.2</span></p>
         </div>
     </div>
-</header>
+</div>
 
-<section class="py-5">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="text-center fw-bold mb-4">Mes Activités</h2>
-                <p class="text-center lead">Voici un aperçu détaillé de mes engagements</p>
-            </div>
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Activité 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image1" src="assets/ZANMO_KENFACK_LaTeX.jpg" class="card-img-top" alt="Séminaire Latex">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Séminaire Latex</h5>
-                        <div class="description-container">
-                            <p class="card-text">J'ai participé à un séminaire sur LaTeX organisé par Madame Guerrit. 
-                                Celui-ci s'est déroulé en trois périodes. À chaque séance, 
-                                nous avons appris à utiliser différents outils de LaTeX. J'ai trouvé cela très utile, 
-                                car j'ai pu m'en servir pour rédiger mon rapport de stage ainsi que mon TFE.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 6 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image1">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image2" src="assets/atelier-ephec-entreprendre.jpg" class="card-img-top" alt="Atelier EPHEC Entreprendre">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Atelier EPHEC Entreprendre</h5>
-                        <div class="description-container">
-                            <p class="card-text">Participation à plusieurs réunions sur la facturation et le statut d'étudiant entrepreneur organisées par EPHEC Entreprendre.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 5 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image2">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image3" src="assets/decathlon.jpeg" class="card-img-top" alt="Job étudiant Decathlon">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Job étudiant Decathlon</h5>
-                        <div class="description-container">
-                            <p class="card-text">J'ai eu l'occasion de travailler en tant qu'étudiant au centre de distribution de Willebroek pour Decathlon. 
-                                Mon rôle principal était de préparer les commandes destinées aux différents magasins Decathlon situés en Belgique.
-                                Parfois, j'endossais le rôle de "chef de table". 
-                                Ce poste impliquait de gérer l'équipe pendant la journée. 
-                                Je devais assister à une réunion matinale où l'on nous communiquait les objectifs de la journée. 
-                                Ensuite, je devais m'assurer que l'équipe atteignait ces objectifs.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 10 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image3">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image4" src="assets/formation-java.jpg" class="card-img-top" alt="Formation Java">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Formation Java</h5>
-                        <div class="description-container">
-                            <p class="card-text">Dans le cadre de mon apprentissage, j'ai suivi une formation sur OpenClassrooms Java J'ai suivi une formation afin d'apprendre les bases de ce langage, nécessaire pour mon stage.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 15 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image4">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image5" src="assets/formation-react-native.jpg" class="card-img-top" alt="Formation React Native">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Formation React</h5>
-                        <div class="description-container">
-                            <p class="card-text">Dans le cadre de mon apprentissage, j'ai suivi une formation sur OpenClassrooms React un framework que j'ai utilisé dans divers projets à l'école</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 8 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image5">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image6" src="assets/colloque.jpeg" class="card-img-top" alt="5ème Colloque Condorcet IA">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">5ème Colloque Condorcet IA</h5>
-                        <div class="description-container">
-                            <p class="card-text">J'ai assisté à la 5ᵉ colloque sur l'intelligence artificielle, organisé à Condorcet. Lors de cet événement, 
-                                nous avons discuté des enjeux liés à l'IA dans le milieu scolaire et de son intégration progressive.
-                                À la suite de la conférence, une charte a été ouverte afin de recueillir l'avis des étudiants. Plusieurs ateliers ont également été proposés :
-                                L'un animé par un chercheur, qui a présenté l'apport de l'IA dans son domaine de recherche.
-                                L'autre par un agent de Microsoft, avec qui nous avons échangé sur différents outils numériques et participé à des workshops.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 7.5 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image6">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 7 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image7" src="assets/openlabAct.jpeg" class="card-img-top" alt="Activité OpenLab">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Activité openlab</h5>
-                        <div class="description-container">
-                            <p class="card-text">Lors de la conférence FCCU, nous avons eu l'honneur d'accueillir un agent de la police judiciaire, spécialisé dans le département IT. 
-                                Il nous a parlé de son travail, qui consiste à analyser les preuves numériques telles que les appels, les SMS, ou d'autres données digitales.
-                                Ce métier nécessite également une présence sur le terrain, car il arrive que les agents doivent se rendre directement sur les lieux pour effectuer des analyses.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 5.2 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image7">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activité 8-->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-img-container">
-                        <img id="image8" src="assets/colloque-ia.jpg" class="card-img-top" alt="Conférence IA">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">User-Centric Innovation and Media Regulation</h5>
-                        <div class="description-container">
-                            <p class="card-text">J'ai assisté à la 2ème édition de l'atelier annuel ALGEPI intitulé "AI to the Future: User-Centric Innovation and Media Regulation", organisé à 
-                                l'Université de Namur le 24 avril 2025. Cet événement a rassemblé des experts en IA, des chercheurs en médias et 
-                                des professionnels du secteur pour discuter des enjeux liés aux algorithmes, à la transparence et à la régulation.
-                                Cette expérience m'a permis de mieux comprendre les défis opérationnels et éthiques des systèmes algorithmiques, 
-                                un savoir que j'applique aujourd'hui dans mes projets liés à l'IA responsable.</p>
-                        </div>
-                        <p><strong>Heures effectuées :</strong> 7.5 </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-toggle toggle-description">
-                                Voir description
-                            </button>
-                            <button class="btn btn-primary btn-toggle toggle-image" data-target="image8">
-                                Afficher preuve
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-        <!-- Bloc pour afficher le nombre total d'activités -->
-        <div class="total-activities text-center mt-5">
-            <h4>Total des activités: <span id="totalActivities">8</span></h4>
-            <p class="mb-0">Heures totales: <span id="totalHours">64.2</span></p>
-        </div>
-    </div>
-</section>
-
-<footer class="bg-dark text-white py-4">
+<footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -351,33 +258,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Gestion des boutons d'affichage d'image
-        document.querySelectorAll('.toggle-image').forEach(button => {
-            button.addEventListener('click', function() {
-                const targetId = this.getAttribute('data-target');
-                const img = document.getElementById(targetId);
-                
-                img.classList.toggle('active');
-                this.textContent = img.classList.contains('active') ? 'Masquer preuve' : 'Afficher preuve';
-                
-                if (img.classList.contains('active')) {
-                    img.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        });
-        
-        // Gestion des boutons de description
-        document.querySelectorAll('.toggle-description').forEach(button => {
-            button.addEventListener('click', function() {
-                const description = this.closest('.card-body').querySelector('.description-container');
-                description.classList.toggle('show');
-                this.textContent = description.classList.contains('show') ? 'Masquer description' : 'Voir description';
-            });
-        });
-    });
-</script>
-
 </body>
 </html>
